@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http‑equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CBSE Examination Results 2024</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Top teal bar -->
+  <!-- Teal top bar -->
   <div class="cbse-header">
     <div class="cbse-left">
       <img src="logo.png" alt="CBSE Logo" class="logo">
       <div class="board-text">
         <div class="hindi">केन्द्रीय माध्यमिक शिक्षा बोर्ड</div>
-        <div class="english">Central Board of Stressful Examinations</div>
+        <div class="english">Central Board of Secondary Education</div>
       </div>
     </div>
     <div class="cbse-url">http://cbseresults.nic.in</div>
@@ -24,16 +24,16 @@
   <div class="sub-header">
     <div class="sub-left"></div>
     <div class="sub-right">
-      <div class="title">Examination Results 2024</div>
-      <div class="byline">Brought to you by National Informatics Centre</div>
+      <span class="title">Examination Results 2024</span><br>
+      <span class="byline">Brought to you by National Informatics Centre</span>
     </div>
   </div>
 
-  <!-- Input form -->
+  <!-- Form -->
   <div class="form-wrap">
     <h3>Secondary School Examination (Class X) 2024</h3>
-    <form action="result.html" method="get">
-      <table class="result-form" cellpadding="8">
+    <form action="result.html" method="get" class="result-form">
+      <table cellpadding="8">
         <tr>
           <td class="label-cell">Enter your Roll Number</td>
           <td><input type="tel" name="roll" inputmode="numeric" pattern="\d*" required></td>
@@ -47,10 +47,7 @@
           <td><input type="date" name="dob" required></td>
         </tr>
         <tr>
-          <td class="label-cell">
-            Enter Admit Card ID<br>
-            <span class="hint">(as given on your admit card)</span>
-          </td>
+          <td class="label-cell">Enter Admit Card ID<br><span class="hint">(as given on your admit card)</span></td>
           <td><input type="tel" name="admit" inputmode="numeric" pattern="\d*" required></td>
         </tr>
         <tr>
