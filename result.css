@@ -1,0 +1,114 @@
+/* Base */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  background: #fff;
+}
+
+/* Header */
+.cbse-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #00a9e0;
+  color: #fff;
+  padding: 12px 20px;
+}
+.cbse-left { display: flex; align-items: center; }
+.logo { height: 50px; margin-right: 12px; }
+.board-text .hindi { font-size: 1rem; }
+.board-text .english { font-size: 1.1rem; font-weight: bold; }
+.cbse-url { font-size: 0.9rem; }
+
+/* Subheader */
+.result-subheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+  border-bottom: 1px solid #ccc;
+}
+.print-link { color: #0000cc; text-decoration: none; font-size: 0.9rem; }
+.exam-info .exam-title { color: #0000cc; font-weight: bold; }
+.byline { font-family: serif; font-size: 0.85rem; }
+
+/* Main Title */
+.main-title {
+  text-align: center;
+  margin: 20px 0;
+  color: #0000cc;
+  font-weight: bold;
+}
+.main-title span {
+  display: block;
+  margin-top: 4px;
+  color: #000;
+  font-size: 1rem;
+}
+
+/* Details */
+.details {
+  width: 95%; max-width: 800px;
+  margin: 0 auto 20px;
+  border-collapse: collapse;
+}
+.details td {
+  padding: 6px 10px;
+  text-align: left;
+}
+.details td:first-child {
+  font-weight: bold;
+  width: 200px;
+}
+
+/* Marks Table */
+.marks-table {
+  width: 95%; max-width: 800px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+.marks-table th,
+.marks-table td {
+  border: 1px solid #000;
+  padding: 8px;
+  font-size: 0.95rem;
+}
+.marks-table th {
+  background: #00008b;
+  color: #fff;
+  text-align: center;
+}
+.marks-table td {
+  text-align: left;
+}
+.marks-table td:first-child,
+.marks-table td:last-child {
+  text-align: center;
+}
+/* Prevent wrap */
+.marks-table td:nth-child(2), .marks-table th:nth-child(2) { white-space: nowrap; }
+
+/* Additional Subject */
+.additional-heading {
+  background: #d9e7f6;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+/* Result Row */
+.result-row td:first-child,
+.result-cell,
+.result-empty {
+  background: #00008b;
+  border: 1px solid #000;
+}
+.result-cell {
+  color: #fff;
+  text-align: left;
+  font-weight: bold;
+  padding: 8px;
+}
+.result-empty {
+  padding: 8px;
+}

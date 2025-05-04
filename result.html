@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CBSE Class X Result 2024</title>
+  <link rel="stylesheet" href="result.css">
+</head>
+<body onload="generateResults()">
+  <!-- Header -->
+  <div class="cbse-header">
+    <div class="cbse-left">
+      <img src="logo.png" alt="CBSE Logo" class="logo">
+      <div class="board-text">
+        <div class="hindi">केन्द्रीय माध्यमिक शिक्षा बोर्ड</div>
+        <div class="english">Central Board of Stressful Examinations</div>
+      </div>
+    </div>
+    <div class="cbse-url">http://cbseresults.nic.in</div>
+  </div>
+
+  <!-- Subheader & Print -->
+  <div class="result-subheader">
+    <a href="#" onclick="window.print()" class="print-link">Print this page</a>
+    <div class="exam-info">
+      <div class="exam-title">Examination Results 2024</div>
+      <div class="byline">Brought to you by National Informatics Centre</div>
+    </div>
+  </div>
+
+  <!-- Title -->
+  <div class="main-title">
+    CENTRAL BOARD OF STRESSFUL EXAMINATIONS<br>
+    <span>Secondary School Examination (Class X) 2024</span>
+  </div>
+
+  <!-- Student Details -->
+  <table class="details">
+    <tr><td>Roll No:</td><td id="out-roll"></td></tr>
+    <tr><td>Candidate Name:</td><td>Alakh Jr</td></tr>
+    <tr><td>Mother's Name:</td><td>Mom</td></tr>
+    <tr><td>Father's Name:</td><td>Alakh Daddy</td></tr>
+    <tr><td>Date of Birth:</td><td id="out-dob"></td></tr>
+    <tr><td>School's Name:</td><td id="out-school"></td></tr>
+  </table>
+
+  <!-- Marks Table -->
+  <table class="marks-table">
+    <thead>
+      <tr>
+        <th>SUB CODE</th>
+        <th>SUB NAME</th>
+        <th>THEORY</th>
+        <th>LA / PRACTICAL</th>
+        <th>TOTAL</th>
+        <th>POSITIONAL GRADE</th>
+      </tr>
+    </thead>
+    <tbody id="marks-body"></tbody>
+    <tfoot>
+      <tr class="result-row">
+        <td></td>
+        <td class="result-cell">Result : <span id="final-result"></span></td>
+        <td class="result-empty"></td>
+        <td class="result-empty"></td>
+        <td class="result-empty"></td>
+        <td class="result-empty"></td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <script src="result.js"></script>
+</body>
+</html>
