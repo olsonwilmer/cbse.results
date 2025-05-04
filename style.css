@@ -1,122 +1,119 @@
-/* style.css */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body {
-    font-family: Arial, sans-serif;
-    background: #fff;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  
-  /* Top teal bar */
-  .cbse-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #00a9e0;
-    padding: 12px 24px;
-    color: #fff;
-  }
-  .cbse-left {
-    display: flex;
-    align-items: center;
-  }
-  .logo {
-    height: 52px;
-  }
-  .board-text {
-    margin-left: 12px;
-    line-height: 1.2;
-  }
-  .board-text .hindi {
-    font-size: 1rem;
-  }
-  .board-text .english {
-    font-size: 1.1rem;
-    font-weight: bold;
-  }
-  .cbse-url {
-    font-size: 0.95rem;
-  }
-  
-  /* Sub-header */
-  .sub-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #fff;
-    border-bottom: 1px solid #ccc;
-    padding: 8px 24px;
-  }
-  .sub-left {
-    flex: 1;
+/* Base reset & typography */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Teal header */
+.cbse-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: #00a9e0;
+  padding: 12px 20px;
+  color: #fff;
+}
+.cbse-left { display: flex; align-items: center; }
+.logo { height: 48px; margin-right: 12px; }
+.board-text .hindi { font-size: 1rem; }
+.board-text .english { font-size: 1.1rem; font-weight: bold; }
+.cbse-url { font-size: 0.9rem; }
+
+/* Sub-header */
+.sub-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+}
+.sub-left { flex: 1; }
+.sub-right { flex: 1; text-align: right; }
+.title { color: #0000cc; font-size: 1.25rem; font-weight: bold; }
+.byline { font-family: serif; font-size: 0.95rem; margin-top: 4px; }
+
+/* Form wrapper */
+.form-wrap {
+  width: 100%;
+  max-width: 520px;
+  margin: 30px auto;
+  padding: 0 10px;
+}
+.form-wrap h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0000cc;
+  font-size: 1.25rem;
+}
+
+/* Table-based form */
+.result-form {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.result-form td {
+  padding: 8px 10px;
+  vertical-align: middle;
+  font-size: 1rem;
+}
+.label-cell {
+  width: 240px;
+  white-space: nowrap;
+}
+.result-form input[type="tel"],
+.result-form input[type="date"] {
+  width: 100%;
+  max-width: 220px;
+  padding: 6px 8px;
+  border: 1px solid #999;
+  font-size: 1rem;
+}
+
+/* Buttons */
+.button-row {
+  text-align: center;
+  padding-top: 16px;
+}
+.button-row button {
+  margin: 0 12px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .sub-header, .cbse-header {
+    justify-content: center;
+    text-align: center;
   }
   .sub-right {
-    flex: 1;
-    text-align: right;
+    text-align: center;
+    margin-top: 8px;
   }
-  .title {
-    color: #0000cc;
-    font-size: 1.25rem;
-    font-weight: bold;
+  /* Restore auto layout for form table */
+  .result-form { table-layout: auto; }
+  /* Reset first column width to let inputs show */
+  .label-cell { width: auto; white-space: normal; }
+  /* Make inputs fluid */
+  .result-form input { max-width: 100%; }
+}
+@media (max-width: 480px) {
+  .cbse-header, .sub-header {
+    flex-direction: column;
+    padding: 10px;
   }
-  .byline {
-    color: #000;
-    font-size: 0.95rem;
-    font-family: serif;
-    margin-top: 4px;
+  .cbse-url, .byline {
+    margin-top: 8px;
   }
-  
-  /* Form wrapper */
   .form-wrap {
-    width: 520px;
-    margin: 40px auto;
+    padding: 0 5px;
   }
-  .form-wrap h3 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #0000cc;
-    font-size: 1.25rem;
-  }
-  
-  /* Table-based form fields */
-  .result-form {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-  }
-  .result-form td {
-    padding: 8px 10px;
-    vertical-align: middle;
-    font-size: 1rem;
-  }
-  .label-cell {
-    width: 240px;
-    white-space: nowrap;
-  }
-  .result-form input[type="tel"],
-  .result-form input[type="date"] {
-    width: 220px;
-    padding: 6px 8px;
-    border: 1px solid #999;
-    font-size: 1rem;
-  }
-  .hint {
-    font-size: 0.85rem;
-    color: #cc0000;
-  }
-  
-  /* Buttons */
-  .button-row {
-    text-align: center;
-    padding-top: 16px;
-  }
-  .button-row button {
-    margin: 0 12px;
-    padding: 8px 18px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
+}
