@@ -20,59 +20,58 @@ function gradeFromTotal(t) {
 }
 
 function generateResults() {
-  const p = new URLSearchParams(location.search);
-  document.getElementById('out-roll').textContent = p.get('roll');
-  document.getElementById('out-dob').textContent = p.get('dob');
-  document.getElementById('out-school').textContent = p.get('school');
+  const params = new URLSearchParams(location.search);
+  document.getElementById('out-roll').textContent = params.get('roll');
+  document.getElementById('out-dob').textContent = params.get('dob');
+  document.getElementById('out-school').textContent = params.get('school');
 
-  // 1. Base ability distribution
-  const ability = Math.pow(Math.random(), 0.3);  // tilt toward higher scores
+  // 1. Strongly skew ability toward high marks
+  const ability = Math.pow(Math.random(), 0.1);  // closer to 1
 
   const tbody = document.getElementById('marks-body');
   let passed = true;
-  let lastGrade = null;
 
   function makeMarks(subject) {
-    // 2. Base theory = ability * 80
+    // Base theory = ability * 80
     let base = ability * 80;
-    // 3. If last subject was B1/B2, boost this one slightly
-    if (lastGrade && lastGrade.startsWith('B')) {
-      base += 10;  // bump up by 10 points
+
+    // 10% chance to drop into B1 range
+    if (Math.random() < 0.10) {
+      base = 72 + Math.random() * 8;  // roughly 72–80
     }
-    // 4. Small jitter ±5
-    const jitter = (Math.random() - 0.5) * 10;
+
+    // Small jitter ±3
+    const jitter = (Math.random() - 0.5) * 6;
     let theory = Math.round(base + jitter);
-    theory = Math.max(0, Math.min(80, theory));  // clamp
+    theory = Math.max(0, Math.min(80, theory));  // clamp between 0 and 80
 
     const practical = 20;
     const total = theory + practical;
     const grade = gradeFromTotal(total);
-    lastGrade = grade;
     if (!subject.isAdditional && total < 33) passed = false;
 
     const tr = document.createElement('tr');
     tr.innerHTML = `
       <td>${subject.code}</td>
       <td>${subject.name}</td>
-      <td>${String(theory).padStart(3,'0')}</td>
-      <td>${String(practical).padStart(3,'0')}</td>
-      <td>${String(total).padStart(3,'0')}</td>
-      <td>${grade}</td>
-    `;
+      <td>${String(theory).padStart(3, '0')}</td>
+      <td>${String(practical).padStart(3, '0')}</td>
+      <td>${String(total).padStart(3, '0')}</td>
+      <td>${grade}</td>`;
     tbody.appendChild(tr);
   }
 
-  // 5. Core subjects
+  // Generate core subjects
   subjects.filter(s => !s.isAdditional).forEach(makeMarks);
 
-  // 6. Additional heading
-  const addHdr = document.createElement('tr');
-  addHdr.innerHTML = `<td colspan="6" class="additional-heading">ADDITIONAL SUBJECT</td>`;
-  tbody.appendChild(addHdr);
+  // Additional subject header
+  const hdr = document.createElement('tr');
+  hdr.innerHTML = `<td colspan="6" class="additional-heading">ADDITIONAL SUBJECT</td>`;
+  tbody.appendChild(hdr);
 
-  // 7. Additional subject
+  // Generate additional subject
   subjects.filter(s => s.isAdditional).forEach(makeMarks);
 
-  // 8. PASS/FAIL
+  // Show overall PASS/FAIL
   document.getElementById('final-result').textContent = passed ? 'PASS' : 'FAIL';
 }
