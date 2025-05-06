@@ -2,7 +2,7 @@
 const subjects = [
   { code: '184', name: 'ENGLISH LNG & LIT.', isAdditional: false },
   { code: '085', name: 'HINDI COURSE-B', isAdditional: false },
-  { code: '241', name: 'MATHEMATICS STANDARD', isAdditional: false },
+  { code: '041', name: 'MATHEMATICS STANDARD', isAdditional: false },
   { code: '086', name: 'SCIENCE', isAdditional: false },
   { code: '087', name: 'SOCIAL SCIENCE', isAdditional: false },
   { code: '004', name: 'INFORMATION TECHNOLOGY', isAdditional: true }
