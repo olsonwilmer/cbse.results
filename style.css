@@ -1,27 +1,43 @@
 /* Base reset & typography */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-  font-family: Arial, sans-serif;
-  background: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f9fc;
   font-size: 16px;
   line-height: 1.5;
 }
 
-/* Teal header */
+/* CBSE Header */
 .cbse-header {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   background: #00a9e0;
   padding: 12px 20px;
   color: #fff;
 }
-.cbse-left { display: flex; align-items: center; }
-.logo { height: 48px; margin-right: 12px; }
-.board-text .hindi { font-size: 1rem; }
-.board-text .english { font-size: 1.1rem; font-weight: bold; }
-.cbse-url { font-size: 0.9rem; }
+.cbse-left {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  height: 48px;
+  margin-right: 12px;
+}
+.board-text .hindi {
+  font-size: 1rem;
+}
+.board-text .english {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.cbse-url {
+  font-size: 0.9rem;
+}
 
 /* Sub-header */
 .sub-header {
@@ -29,68 +45,112 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 20px;
+  padding: 10px 20px;
   border-bottom: 1px solid #ccc;
   background: #fff;
 }
-.sub-left { flex: 1; }
-.sub-right { flex: 1; text-align: right; }
-.title { color: #0000cc; font-size: 1.25rem; font-weight: bold; }
-.byline { font-family: serif; font-size: 0.95rem; margin-top: 4px; }
+.sub-left {
+  flex: 1;
+}
+.sub-right {
+  flex: 1;
+  text-align: right;
+}
+.title {
+  color: #0000cc;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.byline {
+  font-family: serif;
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
 
 /* Form wrapper */
 .form-wrap {
   width: 100%;
-  max-width: 520px;
-  margin: 30px auto;
-  padding: 0 10px;
+  max-width: 560px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
 }
 .form-wrap h3 {
   text-align: center;
-  margin-bottom: 20px;
-  color: #0000cc;
-  font-size: 1.25rem;
+  margin-bottom: 24px;
+  color: #003366;
+  font-size: 1.35rem;
 }
 
 /* Table-based form */
 .result-form {
   width: 100%;
   border-collapse: collapse;
-  table-layout: fixed;
 }
 .result-form td {
-  padding: 8px 10px;
+  padding: 12px 10px;
   vertical-align: middle;
   font-size: 1rem;
 }
 .label-cell {
-  width: 240px;
-  white-space: nowrap;
+  width: 230px;
+  font-weight: 500;
+  color: #333;
 }
+.hint {
+  font-size: 0.85rem;
+  color: #666;
+}
+
 .result-form input[type="tel"],
 .result-form input[type="date"] {
   width: 100%;
-  max-width: 220px;
-  padding: 6px 8px;
-  border: 1px solid #999;
+  max-width: 240px;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   font-size: 1rem;
+  background: #f9f9f9;
+  transition: border 0.2s;
+}
+.result-form input:focus {
+  border-color: #00a9e0;
+  outline: none;
+  background: #fff;
 }
 
 /* Buttons */
 .button-row {
   text-align: center;
-  padding-top: 16px;
+  padding-top: 20px;
 }
 .button-row button {
   margin: 0 12px;
-  padding: 8px 18px;
+  padding: 10px 24px;
   font-size: 1rem;
   cursor: pointer;
+  background: #00a9e0;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+.button-row button:hover {
+  background: #007ea8;
+  transform: scale(1.02);
+}
+.button-row button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00a9e0, 0 0 0 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive tweaks */
 @media (max-width: 768px) {
-  .sub-header, .cbse-header {
+  .sub-header,
+  .cbse-header {
     justify-content: center;
     text-align: center;
   }
@@ -98,22 +158,25 @@ body {
     text-align: center;
     margin-top: 8px;
   }
-  /* Restore auto layout for form table */
-  .result-form { table-layout: auto; }
-  /* Reset first column width to let inputs show */
-  .label-cell { width: auto; white-space: normal; }
-  /* Make inputs fluid */
-  .result-form input { max-width: 100%; }
+  .label-cell {
+    width: auto;
+    white-space: normal;
+  }
+  .result-form input {
+    max-width: 100%;
+  }
 }
 @media (max-width: 480px) {
-  .cbse-header, .sub-header {
+  .cbse-header,
+  .sub-header {
     flex-direction: column;
     padding: 10px;
   }
-  .cbse-url, .byline {
+  .cbse-url,
+  .byline {
     margin-top: 8px;
   }
   .form-wrap {
-    padding: 0 5px;
+    padding: 16px 10px;
   }
 }
